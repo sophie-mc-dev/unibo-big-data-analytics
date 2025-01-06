@@ -1,9 +1,8 @@
 # Big Data Analysis with Vagrant
 
-This repository contains a Vagrant-based environment setup for performing data analysis using the **CDC Diabetes Health Indicators Dataset**. 
+This repository contains a Vagrant-based environment setup for performing data analysis using the **CDC Diabetes Health Indicators Dataset**.
 
-This Project was implemented in the context of Big Data Analytics and Text Mining class from UNIBO's Master's degree in Artificial Intelligence.
-
+This project was implemented in the context of the Big Data Analytics and Text Mining class from UNIBO's Master's degree in Artificial Intelligence.
 
 ## Project Setup
 
@@ -14,6 +13,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
 - **Vagrant**: A tool for building and maintaining virtualized development environments.
 - **VirtualBox**: A free and open-source hosted hypervisor for running virtual machines.
 - **Git**: Version control system for managing project files.
+- **Kaggle API (Optional)**: Required if you want to download the dataset directly through the Kaggle API.
 
 ### Project Files
 
@@ -29,12 +29,40 @@ Before starting with the Vagrant environment, ensure that the following tools ar
    cd unibo-big-data-analytics
    ```
 
-2. **Start the Vagrant VM:**
+2. **Download the Dataset (Optional - Using Kaggle API):**
+
+   If you'd like to download the **CDC Diabetes Health Indicators Dataset** directly, you can use the Kaggle API. Follow these steps:
+
+   - Install the Kaggle API:
+     ```bash
+     pip install kaggle
+     ```
+
+   - Authenticate with Kaggle by downloading your `kaggle.json` API key file from [Kaggle Account Settings](https://www.kaggle.com/account) and placing it in the `~/.kaggle/` directory.
+
+   - Download the dataset:
+     ```bash
+     kaggle datasets download -d alexteboul/diabetes-health-indicators-dataset
+     ```
+
+   - Unzip the dataset:
+     ```bash
+     unzip diabetes-health-indicators-dataset.zip
+     ```
+
+   You can also visit the Kaggle page for manual downloading:  
+   [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset)
+
+3. **Start the Vagrant VM:**
 
    This command will download the specified Ubuntu box, create a virtual machine, and provision it with the required tools and packages.
 
    ```bash
    vagrant up
+   ```
+
+   ```bash
+   jupyter notebook --ip=0.0.0.0 --no-browser
    ```
 
    - The VM will be configured with:
@@ -44,7 +72,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
      - Various Python data analysis libraries (e.g., Pandas, Matplotlib)
      - VNC server for graphical interface (optional)
 
-3. **Access Jupyter Notebook:**
+4. **Access Jupyter Notebook:**
 
    Once the Vagrant VM is up and running, you can access Jupyter Notebooks by navigating to:
 
@@ -52,7 +80,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
 
    You can access the notebooks and start your data analysis tasks from this interface.
 
-4. **Working with Notebooks:**
+5. **Working with Notebooks:**
 
    You can create new notebooks or open existing ones from the shared folder (`./notebooks` in the repository). Any changes made will be reflected in both the VM and your local machine.
 
