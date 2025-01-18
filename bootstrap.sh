@@ -9,8 +9,14 @@ apt-get install -y python3 python3-pip default-jre
 # Install essential tools and utilities
 apt-get install -y mc wget
 
+# Upgrade pip and setuptools to the latest versions
+python3 -m pip install --upgrade pip setuptools
+
 # Install Python libraries required for the project
 pip3 install numpy pandas matplotlib seaborn jupyter scikit-learn
+
+# Install the latest version of scikit-learn compatible with Python 3.11.5
+pip3 install scikit-learn --upgrade
 
 # Install and configure Hadoop (version 3.4.0)
 if ! [ -d /usr/local/hadoop-3.4.0 ]; then
