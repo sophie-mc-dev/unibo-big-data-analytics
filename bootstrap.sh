@@ -12,6 +12,9 @@ apt-get install -y mc wget
 # Upgrade pip and setuptools to the latest versions
 python3 -m pip install --upgrade pip setuptools
 
+# For kaggle authentication and API use
+pip3 install kaggle
+
 # Install Python libraries required for the project
 pip3 install numpy pandas matplotlib seaborn jupyter scikit-learn
 
