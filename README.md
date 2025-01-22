@@ -13,7 +13,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
 - **Vagrant**: A tool for building and maintaining virtualized development environments.
 - **VirtualBox**: A free and open-source hosted hypervisor for running virtual machines.
 - **Git**: Version control system for managing project files.
-- **Kaggle API**: Required to download the dataset directly through the Kaggle API.
+- **Kaggle API**: Required to download the dataset directly through the Kaggle API ([Kaggle API Documentation](https://www.kaggle.com/docs/api)).
 
 ### Project Files
 
@@ -29,19 +29,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
    cd unibo-big-data-analytics
    ```
 
-2. **Download the Dataset:**
-
-   To download the **CDC Diabetes Health Indicators Dataset** directly, you have to use the Kaggle API. Once you have downloaded the kaggle.json file from your Kaggle profile into your home directory:
-
-   - Execute the download_data Python script:
-
-     ```bash
-     python3 download_data.py
-     ```
-
-   You can also visit the Kaggle page for manual downloading: [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset)
-
-3. **Start the Vagrant VM:**
+2. **Start the Vagrant VM:**
 
    This command will download the specified Ubuntu box, create a virtual machine, and provision it with the required tools and packages.
 
@@ -56,7 +44,7 @@ Before starting with the Vagrant environment, ensure that the following tools ar
    - The VM will be configured with:
      - Python 3
      - Jupyter Notebook
-     - Various Python data analysis libraries (e.g., Pandas, Matplotlib)
+     - Various Python data analysis libraries
 
 4. **Access Jupyter Notebook:**
 
